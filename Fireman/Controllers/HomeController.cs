@@ -2,6 +2,7 @@ using System.Diagnostics;
 using FIREMAN.Models;
 using Microsoft.AspNetCore.Mvc;
 
+
 namespace FIREMAN.Controllers
 {
     public class HomeController : Controller
@@ -26,7 +27,7 @@ namespace FIREMAN.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new ErrorViewModel { RequestId = HttpContext.TraceIdentifier });
         }
     }
 }
