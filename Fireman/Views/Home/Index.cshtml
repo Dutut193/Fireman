@@ -1,8 +1,223 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@{
+    ViewData["Title"] = "Home Page";
+}
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>ГДПБЗН - Информационна система</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+        }
+
+        header {
+            background-color: #c62828;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            padding: 60px;
+            text-align: center;
+            background: url('/Images/fire1.jpg.jpg') no-repeat center/cover;
+            color: black;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+        }
+
+        .content {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            width: 25%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .images-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px;
+        }
+
+        .image-box {
+            position: relative;
+            width: 30%;
+            overflow: hidden;
+            border-radius: 15px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeIn 1s forwards;
+        }
+
+        .image-box:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+
+        .image-box:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .image-box img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .image-box:hover img {
+            transform: scale(1.2);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            width: 100%;
+            padding: 15px;
+            text-align: center;
+            transform: translateY(100%);
+            transition: 0.4s;
+        }
+
+        .image-box:hover .overlay {
+            transform: translateY(0);
+        }
+
+        .center-text {
+            width: 30%;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 0.5s;
+        }
+
+        @@keyframes fadeIn { 
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>ГДПБЗН</h1>
+        <p>Информационна система за управление на произшествия</p>
+    </header>
+
+    <nav>
+        <a href="#">Начало</a>
+        <a href="#">Произшествия</a>
+        <a href="#">Екипи</a>
+        <a href="#">Автомобили</a>
+        <a href="#">Контакти</a>
+    </nav>
+
+    <section class="hero">
+        <h1>Бърза реакция. Координация. Сигурност.</h1>
+        <p>Система, подпомагаща пожарникарите в реално време</p>
+    </section>
+
+    <section class="content">
+        <h2>За системата</h2>
+        <p>
+            Информационната система на ГДПБЗН е създадена за управление на произшествия,
+            координация на екипи и проследяване на ресурси в реално време.
+        </p>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Произшествия</h3>
+                <p>Регистрация и управление на инциденти с детайлна информация.</p>
+            </div>
+
+            <div class="card">
+                <h3>Екипи</h3>
+                <p>Проследяване на налични служители и разпределение по задачи.</p>
+            </div>
+
+            <div class="card">
+                <h3>Навигация</h3>
+                <p>GPS позициониране и бърз достъп до мястото на събитието.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="images-section">
+
+        <div class="image-box">
+            <img src="/Images/fire1.jpg" alt="Пожар">
+            <div class="overlay">Реакция при инцидент</div>
+        </div>
+
+        <div class="center-text">
+            <h2>ГДПБЗН Система</h2>
+            <p>Координация на екипи и управление на произшествия в реално време.</p>
+        </div>
+
+        <div class="image-box">
+            <img src="/Images/fire2.jpg" alt="Екип">
+            <div class="overlay">Работа на терен</div>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 ГДПБЗН - Всички права запазени</p>
+    </footer>
+
+</body>
+</html>
