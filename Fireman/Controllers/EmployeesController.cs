@@ -12,7 +12,7 @@ public class EmployeesController : Controller
         _context = context;
     }
 
-    // LIST
+   
     public async Task<IActionResult> Index()
     {
         return View(await _context.Employees.ToListAsync());
