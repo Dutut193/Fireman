@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 
 public class FireDepartmentController : Controller
 {
-    private readonly FireDbContex _context;
+    private readonly FireDbContext _context;
 
-    public FireDepartmentController(FireDbContex context)
+    public FireDepartmentController(FireDbContext context)
     {
         _context = context;
     }

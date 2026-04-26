@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 
 public class TeamsController : Controller
 {
-    private readonly FireDbContex _context;
+    private readonly FireDbContext _context;
 
-    public TeamsController(FireDbContex context)
+    public TeamsController(FireDbContext context)
     {
         _context = context;
     }

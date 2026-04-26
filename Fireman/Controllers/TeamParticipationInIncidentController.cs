@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore;
 
 public class TeamParticipationInIncidentController : Controller
 {
-    private readonly FireDbContex _context;
+    private readonly FireDbContext _context;
 
-    public TeamParticipationInIncidentController(FireDbContex context)
+    public TeamParticipationInIncidentController(FireDbContext context)
     {
         _context = context;
     }

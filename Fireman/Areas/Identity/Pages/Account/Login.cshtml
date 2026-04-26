@@ -1,0 +1,84 @@
+﻿@page
+@model LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.min.css" />
+
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-image: url('/Images/fire-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .center-wrapper {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.70); /* register ile aynı */
+        backdrop-filter: blur(4px);
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+        border-radius: 18px;
+        width: 420px
+
+    }
+</style>
+
+<div class="center-wrapper">
+    <div class="card shadow-4">
+        <div class="card-body p-4">
+
+            <h3 class="text-center mb-4" style="color:#d32f2f; font-weight:600;">
+                Login
+            </h3>
+
+            <form method="post">
+
+                <div class="form-outline mb-4">
+                    <input asp-for="Input.Email" class="form-control" />
+                    <label class="form-label" asp-for="Input.Email">Email</label>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <input asp-for="Input.Password" class="form-control" type="password" />
+                    <label class="form-label" asp-for="Input.Password">Password</label>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+
+                <div class="form-check mb-4">
+                    <input asp-for="Input.RememberMe" class="form-check-input" />
+                    <label class="form-check-label" asp-for="Input.RememberMe">Remember me</label>
+                </div>
+
+                <button class="btn btn-danger btn-lg w-100 mb-3" style="border-radius: 10px;">
+                    Login
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.min.js"></script>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

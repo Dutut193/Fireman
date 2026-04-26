@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 
 public class IncidentController : Controller
 {
-    private readonly FireDbContex _context;
+    private readonly FireDbContext _context;
 
-    public IncidentController(FireDbContex context)
+    public IncidentController(FireDbContext context)
     {
         _context = context;
     }

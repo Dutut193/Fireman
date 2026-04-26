@@ -3,8 +3,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FIREMAN.Data
 {
-    public class FireDbContex : DbContext
+    public class FireDbContext : DbContext
     {
+        public FireDbContext(DbContextOptions<FireDbContext> options)
+            : base(options) { }
+        
         public DbSet<FireDepartment> FireStations { get; set; }
         public DbSet<Employees> Employees { get; set; }
         public DbSet<Teams> Teams { get; set; }
