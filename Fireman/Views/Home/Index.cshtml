@@ -1,223 +1,148 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
-}
-@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Начало";
 }
 
-<!DOCTYPE html>
-<html lang="bg">
-<head>
-    <meta charset="UTF-8">
-    <title>ГДПБЗН - Информационна система</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f8;
-        }
+<section class="hero-section">
+    <div class="hero-content">
+        <p class="hero-label">Информационна система за ГДПБЗН</p>
 
-        header {
-            background-color: #c62828;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+        <h1>
+            Управление на произшествия, екипи и ресурси
+        </h1>
 
-        nav {
-            background-color: #333;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        .hero {
-            padding: 60px;
-            text-align: center;
-            background: url('/Images/fire1.jpg.jpg') no-repeat center/cover;
-            color: black;
-        }
-
-        .hero h1 {
-            font-size: 40px;
-        }
-
-        .content {
-            padding: 40px;
-            text-align: center;
-        }
-
-        .cards {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 30px;
-        }
-
-        .card {
-            background: white;
-            padding: 20px;
-            width: 25%;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-
-        .images-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 60px;
-        }
-
-        .image-box {
-            position: relative;
-            width: 30%;
-            overflow: hidden;
-            border-radius: 15px;
-            opacity: 0;
-            transform: translateY(50px);
-            animation: fadeIn 1s forwards;
-        }
-
-        .image-box:nth-child(1) {
-            animation-delay: 0.3s;
-        }
-
-        .image-box:nth-child(3) {
-            animation-delay: 0.6s;
-        }
-
-        .image-box img {
-            width: 100%;
-            display: block;
-            transition: transform 0.5s ease, box-shadow 0.5s ease;
-        }
-
-        .image-box:hover img {
-            transform: scale(1.2);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-        }
-
-        .overlay {
-            position: absolute;
-            bottom: 0;
-            background: rgba(0,0,0,0.6);
-            color: white;
-            width: 100%;
-            padding: 15px;
-            text-align: center;
-            transform: translateY(100%);
-            transition: 0.4s;
-        }
-
-        .image-box:hover .overlay {
-            transform: translateY(0);
-        }
-
-        .center-text {
-            width: 30%;
-            text-align: center;
-            opacity: 0;
-            animation: fadeIn 1s forwards;
-            animation-delay: 0.5s;
-        }
-
-        @@keyframes fadeIn { 
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        footer {
-            background-color: #222;
-            color: white;
-            text-align: center;
-            padding: 15px;
-        }
-    </style>
-</head>
-
-<body>
-
-    <header>
-        <h1>ГДПБЗН</h1>
-        <p>Информационна система за управление на произшествия</p>
-    </header>
-
-    <nav>
-        <a href="#">Начало</a>
-        <a href="#">Произшествия</a>
-        <a href="#">Екипи</a>
-        <a href="#">Автомобили</a>
-        <a href="#">Контакти</a>
-    </nav>
-
-    <section class="hero">
-        <h1>Бърза реакция. Координация. Сигурност.</h1>
-        <p>Система, подпомагаща пожарникарите в реално време</p>
-    </section>
-
-    <section class="content">
-        <h2>За системата</h2>
-        <p>
-            Информационната система на ГДПБЗН е създадена за управление на произшествия,
-            координация на екипи и проследяване на ресурси в реално време.
+        <p class="hero-description">
+            Система за подпомагане на оперативната дейност на пожарната:
+            регистрация на произшествия, избор на екипи, проследяване на автомобили,
+            управление на задачи, ресурси и комуникация в реално време.
         </p>
 
-        <div class="cards">
-            <div class="card">
-                <h3>Произшествия</h3>
-                <p>Регистрация и управление на инциденти с детайлна информация.</p>
-            </div>
-
-            <div class="card">
-                <h3>Екипи</h3>
-                <p>Проследяване на налични служители и разпределение по задачи.</p>
-            </div>
-
-            <div class="card">
-                <h3>Навигация</h3>
-                <p>GPS позициониране и бърз достъп до мястото на събитието.</p>
-            </div>
+        <div class="hero-buttons">
+            <a class="btn btn-primary-custom" asp-controller="Home" asp-action="Privacy">
+                Виж повече
+            </a>
+            <a class="btn btn-outline-light-custom" href="#features">
+                Основни функции
+            </a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="images-section">
+<section class="stats-section">
+    <div class="stat-card">
+        <h3>112</h3>
+        <p>Регистрация на сигнали</p>
+    </div>
 
-        <div class="image-box">
-            <img src="/Images/fire1.jpg" alt="Пожар">
-            <div class="overlay">Реакция при инцидент</div>
+    <div class="stat-card">
+        <h3>GPS</h3>
+        <p>Проследяване на автомобили</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>24/7</h3>
+        <p>Оперативна готовност</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>Real-time</h3>
+        <p>Комуникация между екипи</p>
+    </div>
+</section>
+
+<section id="features" class="features-section">
+    <div class="section-title">
+        <p>Функционалности</p>
+        <h2>Какво предлага системата?</h2>
+    </div>
+
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🔥</div>
+            <h3>Управление на произшествия</h3>
+            <p>
+                Регистриране на нови произшествия с адрес, GPS координати,
+                тип на събитието и назначен екип.
+            </p>
         </div>
 
-        <div class="center-text">
-            <h2>ГДПБЗН Система</h2>
-            <p>Координация на екипи и управление на произшествия в реално време.</p>
+        <div class="feature-card">
+            <div class="feature-icon">🚒</div>
+            <h3>Екипи и автомобили</h3>
+            <p>
+                Проследяване на налични служители, смени, отпуски,
+                болнични и разпределение към пожарни автомобили.
+            </p>
         </div>
 
-        <div class="image-box">
-            <img src="/Images/fire2.jpg" alt="Екип">
-            <div class="overlay">Работа на терен</div>
+        <div class="feature-card">
+            <div class="feature-icon">📍</div>
+            <h3>Карта и навигация</h3>
+            <p>
+                GPS навигация до мястото на произшествието и визуализация
+                на местоположението на автомобилите в оперативния център.
+            </p>
         </div>
 
-    </section>
+        <div class="feature-card">
+            <div class="feature-icon">✅</div>
+            <h3>Задачи и статуси</h3>
+            <p>
+                Разпределяне на логистични, оперативни и административни задачи
+                към служители и следене на тяхното изпълнение.
+            </p>
+        </div>
 
-    <footer>
-        <p>© 2026 ГДПБЗН - Всички права запазени</p>
-    </footer>
+        <div class="feature-card">
+            <div class="feature-icon">💧</div>
+            <h3>Заявка на ресурси</h3>
+            <p>
+                Възможност за заявяване на вода, гориво, техника и други
+                материали, нужни при работа по произшествие.
+            </p>
+        </div>
 
-</body>
-</html>
+        <div class="feature-card">
+            <div class="feature-icon">💬</div>
+            <h3>Чат и комуникация</h3>
+            <p>
+                Чат канали към конкретно събитие, готови шаблони за съобщения,
+                свободен текст и споделяне на снимки.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="reports-section">
+    <div class="reports-content">
+        <p class="section-label">Справки</p>
+        <h2>Бърз достъп до оперативна информация</h2>
+
+        <p>
+            Системата може да предоставя справки за автомобилите на смяна,
+            участие на служители в произшествия, ефективност на автомобилите
+            и използвани ресурси.
+        </p>
+    </div>
+
+    <div class="reports-list">
+        <div class="report-item">
+            <span>01</span>
+            <p>Автомобили, които днес са на смяна</p>
+        </div>
+
+        <div class="report-item">
+            <span>02</span>
+            <p>Служители с най-много участия в произшествия</p>
+        </div>
+
+        <div class="report-item">
+            <span>03</span>
+            <p>Продължителност на работа по произшествия</p>
+        </div>
+
+        <div class="report-item">
+            <span>04</span>
+            <p>Годишна ефективност при гасене на пожари</p>
+        </div>
+    </div>
+</section>
