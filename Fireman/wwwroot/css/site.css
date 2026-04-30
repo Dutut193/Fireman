@@ -307,3 +307,133 @@ body {
         font-size: 1.8rem;
     }
 }
+/* Auth pages - Login / Register */
+
+.auth-section {
+    min-height: calc(100vh - 120px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    background: linear-gradient(rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.82)), url("https://images.unsplash.com/photo-1508138221679-760a23a2285b?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 0 32px 32px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 480px;
+    background-color: white;
+    padding: 42px;
+    border-radius: 28px;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.28);
+}
+
+.auth-label {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 800;
+    color: #ef4444;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.auth-card h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #111827;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.auth-description {
+    text-align: center;
+    color: #6b7280;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.auth-form .form-floating {
+    margin-bottom: 18px;
+}
+
+.auth-form .form-control {
+    border-radius: 16px;
+    border: 1px solid #d1d5db;
+    padding-left: 18px;
+}
+
+    .auth-form .form-control:focus {
+        border-color: #ef4444;
+        box-shadow: 0 0 0 0.2rem rgba(239, 68, 68, 0.18);
+    }
+
+.auth-form label {
+    color: #6b7280;
+}
+
+.auth-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0 22px;
+    color: #4b5563;
+    font-weight: 600;
+}
+
+.auth-submit {
+    width: 100%;
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    padding: 13px 28px;
+    border-radius: 999px;
+    font-weight: 800;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+    .auth-submit:hover {
+        background-color: #dc2626;
+        color: white;
+        transform: translateY(-2px);
+    }
+
+.auth-links {
+    margin-top: 24px;
+    text-align: center;
+}
+
+    .auth-links a {
+        display: block;
+        color: #dc2626;
+        font-weight: 700;
+        text-decoration: none;
+        margin-top: 8px;
+    }
+
+        .auth-links a:hover {
+            color: #991b1b;
+            text-decoration: underline;
+        }
+
+.auth-validation {
+    color: #dc2626;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+@media (max-width: 576px) {
+    .auth-section {
+        padding: 60px 18px;
+    }
+
+    .auth-card {
+        padding: 32px 22px;
+        border-radius: 22px;
+    }
+
+        .auth-card h1 {
+            font-size: 1.8rem;
+        }
+}

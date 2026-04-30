@@ -1,83 +1,59 @@
 ﻿@page
 @model LoginModel
+
 @{
-    ViewData["Title"] = "Login";
+    ViewData["Title"] = "Вход";
 }
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.min.css" />
+<section class="auth-section">
+    <div class="auth-card">
+        <p class="auth-label">ГДПБЗН</p>
 
-<style>
-    html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
+        <h1>Вход в системата</h1>
 
-    body {
-        background-image: url('/Images/fire-bg.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
+        <p class="auth-description">
+            Влезте в профила си, за да управлявате произшествия,
+            екипи, автомобили и оперативни задачи.
+        </p>
 
-    .center-wrapper {
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-    }
+        <form id="account" method="post" class="auth-form">
+            <div asp-validation-summary="ModelOnly" class="auth-validation" role="alert"></div>
 
-    .card {
-        background: rgba(255, 255, 255, 0.70); /* register ile aynı */
-        backdrop-filter: blur(4px);
-        border: 1px solid rgba(255, 255, 255, 0.45);
-        box-shadow: 0 8px 32px rgba(0,0,0,0.35);
-        border-radius: 18px;
-        width: 420px
+            <div class="form-floating">
+                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                <label asp-for="Input.Email">Имейл</label>
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
 
-    }
-</style>
+            <div class="form-floating">
+                <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="Парола" />
+                <label asp-for="Input.Password">Парола</label>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
 
-<div class="center-wrapper">
-    <div class="card shadow-4">
-        <div class="card-body p-4">
+            <div class="auth-check">
+                <input class="form-check-input" asp-for="Input.RememberMe" />
+                <label class="form-check-label" asp-for="Input.RememberMe">
+                    Запомни ме
+                </label>
+            </div>
 
-            <h3 class="text-center mb-4" style="color:#d32f2f; font-weight:600;">
-                Login
-            </h3>
+            <button id="login-submit" type="submit" class="btn auth-submit">
+                Вход
+            </button>
 
-            <form method="post">
-
-                <div class="form-outline mb-4">
-                    <input asp-for="Input.Email" class="form-control" />
-                    <label class="form-label" asp-for="Input.Email">Email</label>
-                    <span asp-validation-for="Input.Email" class="text-danger"></span>
-                </div>
-
-                <div class="form-outline mb-4">
-                    <input asp-for="Input.Password" class="form-control" type="password" />
-                    <label class="form-label" asp-for="Input.Password">Password</label>
-                    <span asp-validation-for="Input.Password" class="text-danger"></span>
-                </div>
-
-                <div class="form-check mb-4">
-                    <input asp-for="Input.RememberMe" class="form-check-input" />
-                    <label class="form-check-label" asp-for="Input.RememberMe">Remember me</label>
-                </div>
-
-                <button class="btn btn-danger btn-lg w-100 mb-3" style="border-radius: 10px;">
-                    Login
-                </button>
-
-            </form>
-
-        </div>
+            <div class="auth-links">
+                <a asp-page="./ForgotPassword">Забравена парола?</a>
+                <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">
+                    Нямате профил? Регистрация
+                </a>
+                <a asp-page="./ResendEmailConfirmation">
+                    Изпрати отново потвърждение
+                </a>
+            </div>
+        </form>
     </div>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.min.js"></script>
+</section>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
