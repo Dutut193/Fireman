@@ -15,5 +15,7 @@ namespace FIREMAN.Data
         public DbSet<Incident> Incidents { get; set; }
         public DbSet<IncidentLocation> IncidentAddresses { get; set; }
         public DbSet<TeamParticipationInIncident> IncidentTeams { get; set; }
+        public DbSet<Shift> Shifts { get; set; }
+
     }
 }

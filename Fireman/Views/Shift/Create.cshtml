@@ -1,0 +1,28 @@
+﻿@model FIREMAN.Models.Shift
+
+<h2>Създаване на смяна</h2>
+
+<form method="post">
+    <label>Дата</label>
+    <input type="date" name="date" class="form-control" />
+
+    <label>Пожарникар</label>
+    <select name="employeeId" class="form-control">
+        <option value="">-- без пожарникар --</option>
+        @foreach (var e in (IEnumerable<FIREMAN.Models.Employees>)ViewBag.Employees)
+        {
+            <option value="@e.EmployeeId">@e.Name (@e.Rank)</option>
+        }
+    </select>
+
+    <label>Пожарна кола</label>
+    <select name="fireTruckId" class="form-control">
+        <option value="">-- без кола --</option>
+        @foreach (var t in (IEnumerable<FIREMAN.Models.FireTruck>)ViewBag.FireTrucks)
+        {
+            <option value="@t.VehicleId">@t.Model (@t.PlateNumber)</option>
+        }
+    </select>
+
+    <button type="submit" class="btn btn-primary mt-3">Създай</button>
+</form>
