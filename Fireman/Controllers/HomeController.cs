@@ -18,6 +18,10 @@ namespace FIREMAN.Controllers
         {
             return View();
         }
+        public IActionResult About()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {
@@ -29,5 +33,6 @@ namespace FIREMAN.Controllers
         {
             return View(new ErrorViewModel { RequestId = HttpContext.TraceIdentifier });
         }
+
     }
 }
