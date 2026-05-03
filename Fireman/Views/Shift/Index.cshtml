@@ -1,0 +1,31 @@
+﻿@model IEnumerable<FIREMAN.Models.Shift>
+
+<h2>Shifts</h2>
+
+<a href="/Shift/Create" class="btn btn-primary">Add Shift</a>
+
+<table class="table table-striped mt-3">
+    <thead>
+        <tr>
+            <th>Employee ID</th>
+            <th>Fire Truck ID</th>
+            <th>Start</th>
+            <th>End</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var s in Model)
+        {
+            <tr>
+                <td>@s.EmployeeId</td>
+                <td>@s.FireTruckId</td>
+                <td>@s.StartTime</td>
+                <td>@s.EndTime</td>
+                <td>
+                    <a href="/Shift/Delete/@s.Id" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
