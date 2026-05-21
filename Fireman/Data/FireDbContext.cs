@@ -17,5 +17,17 @@ namespace FIREMAN.Data
         public DbSet<TeamParticipationInIncident> IncidentTeams { get; set; }
         public DbSet<Shift> Shifts { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Employees>()
+                .HasOne(e => e.Team)
+                .WithMany()
+                .HasForeignKey(e => e.TeamId)
+                .OnDelete(DeleteBehavior.Restrict);
+        }
+
+
     }
 }

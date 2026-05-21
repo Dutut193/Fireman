@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using FIREMAN.Models;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FIREMAN.Models
@@ -9,17 +10,16 @@ namespace FIREMAN.Models
         public int EmployeeId { get; set; }
 
         public string Name { get; set; }
-
         public string Rank { get; set; }
-
         public string Phone { get; set; }
 
         [ForeignKey("FireStation")]
         public int StationId { get; set; }
-
         public virtual FireDepartment FireStation { get; set; }
 
-
+        // 🔥 Добавяме това
+        public int TeamId { get; set; }
+        public virtual Teams Team { get; set; }
     }
+
 }
-// meemdds

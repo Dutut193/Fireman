@@ -10,22 +10,19 @@ namespace FIREMAN
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+         
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
                 ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-
-            // Identity için gerekli DbContext
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connectionString));
 
-            // FireDbContext (senin tabloların için)
             builder.Services.AddDbContext<FireDbContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("FireConnection")));
+               options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
 
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-            // Identity servisi
             builder.Services.AddDefaultIdentity<IdentityUser>(options =>
             {
                 options.SignIn.RequireConfirmedAccount = false;
@@ -52,8 +49,8 @@ namespace FIREMAN
 
             app.UseRouting();
 
-            // *** EN ÖNEMLİ EKSİK BUYDU ***
-            app.UseAuthentication();   // ← Bunu ekledik
+
+            app.UseAuthentication(); 
 
             app.UseAuthorization();
 
